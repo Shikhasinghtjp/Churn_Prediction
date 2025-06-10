@@ -48,9 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  function showToast(message) {
-    toast.innerText = message;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
-  }
+ function showToast(message, type = 'success') {
+  toast.className = `toast ${type}`; // Add class: success, error, or warning
+  toast.innerText = message;
+  toast.classList.add('show');
+
+  // Hide after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
+}
+
 });

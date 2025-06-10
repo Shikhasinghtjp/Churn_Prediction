@@ -143,3 +143,44 @@ body.dark-mode select {
     background-color: #34495e;
     color: #f0f0f0;
 }
+
+/* Toast Base */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.5s ease-in-out, bottom 0.5s ease-in-out;
+}
+
+/* Show State */
+.toast.show {
+  opacity: 1;
+  bottom: 50px;
+  pointer-events: auto;
+}
+
+/* Toast Types */
+.toast.success {
+  background-color: #2ecc71; /* Green */
+  color: #fff;
+}
+
+.toast.error {
+  background-color: #e74c3c; /* Red */
+  color: #fff;
+}
+
+.toast.warning {
+  background-color: #f39c12; /* Orange */
+  color: #fff;
+}
+
