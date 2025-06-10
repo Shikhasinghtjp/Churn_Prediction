@@ -1,0 +1,84 @@
+/* === Theme Toggle Switch === */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+  color: white;
+  font-weight: bold;
+}
+
+/* Switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input { display: none; }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #00c9a7;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* === Animation Effects === */
+.animate-input {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.animate-input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px #00c9a7;
+}
+.animate-fade {
+  animation: fadeInDown 0.8s ease-out;
+}
+.animate-result {
+  transition: transform 0.4s ease;
+}
+.animate-result.show {
+  transform: scale(1.1);
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Dark and Light Themes === */
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+body.light {
+  background: #f0f0f0;
+  color: #222;
+}
+body.light .container {
+  background: white;
+  color: #222;
+}
+body.light .toast {
+  background: #444;
+  color: #fff;
+}
