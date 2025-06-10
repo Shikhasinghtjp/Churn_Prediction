@@ -3,13 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultDiv = document.getElementById('result');
   const spinner = document.getElementById('spinner');
   const toast = document.getElementById('toast');
-  const modeToggle = document.getElementById('modeToggle');
+  const themeToggle = document.getElementById('toggle-theme');
   const body = document.body;
 
-  // Theme Toggle Handler
-  modeToggle.addEventListener('change', () => {
-    body.classList.toggle('light');
-    body.classList.toggle('dark');
+  // Toggle dark mode
+  themeToggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
   });
 
   form.addEventListener('submit', async (e) => {
@@ -38,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         : "✅ Not Likely to Churn";
 
       resultDiv.innerText = message;
+      resultDiv.style.display = 'block';
       resultDiv.classList.add('show');
       showToast("Prediction Successful ✔");
     } catch (err) {

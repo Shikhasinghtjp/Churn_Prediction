@@ -1,84 +1,145 @@
-/* === Theme Toggle Switch === */
-.theme-toggle {
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 10;
-  color: white;
-  font-weight: bold;
+/* Global Styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #2c3e50, #34495e);
+    color: #fff;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
-/* Switch styling */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
-.switch input { display: none; }
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    flex: 1 1 100%;
+    font-weight: 600;
+}
+
+select, input[type="number"] {
+    flex: 1 1 calc(25% - 20px);
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+button {
+    flex: 1 1 100%;
+    padding: 12px;
+    background-color: #1abc9c;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Result Message */
+#result {
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Dark Mode Toggle */
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-container label {
+    font-weight: bold;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
 }
+
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 18px; width: 18px;
-  left: 3px; bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
 }
+
 input:checked + .slider {
-  background-color: #00c9a7;
+    background-color: #1abc9c;
 }
+
 input:checked + .slider:before {
-  transform: translateX(26px);
+    transform: translateX(24px);
 }
 
-/* === Animation Effects === */
-.animate-input {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.animate-input:focus {
-  transform: scale(1.03);
-  box-shadow: 0 0 8px #00c9a7;
-}
-.animate-fade {
-  animation: fadeInDown 0.8s ease-out;
-}
-.animate-result {
-  transition: transform 0.4s ease;
-}
-.animate-result.show {
-  transform: scale(1.1);
-}
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Dark Mode */
+body.dark-mode {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
 }
 
-/* === Dark and Light Themes === */
-body.dark {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #fff;
-}
-body.light {
-  background: #f0f0f0;
-  color: #222;
-}
-body.light .container {
-  background: white;
-  color: #222;
-}
-body.light .toast {
-  background: #444;
-  color: #fff;
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #34495e;
+    color: #f0f0f0;
 }

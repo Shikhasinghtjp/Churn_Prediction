@@ -3,10 +3,18 @@ import joblib
 import pandas as pd
 from utils import preprocess_input
 import os
-app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), '..', 'templates'))
+
+# Set base directory
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, 'templates'),
+    static_folder=os.path.join(BASE_DIR, 'static')
+)
 
 # Load model
-model = joblib.load("app/model.pkl")
+model = joblib.load(os.path.join(BASE_DIR, "model.pkl"))
 
 @app.route('/')
 def home():
