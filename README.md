@@ -73,6 +73,8 @@ Output: Binary classification - Churn or No Churn
 📊 Sample UI Screenshot
 ![Image](https://github.com/user-attachments/assets/40b5ccd8-5001-4d52-ae01-d4b0473231e2)
 
+![Image](https://github.com/user-attachments/assets/e2d3c983-3c61-454b-9080-518f0ba37025)
+
 
 ---
 
