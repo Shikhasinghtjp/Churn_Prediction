@@ -1,3 +1,19 @@
+# End-To-End Data Science Project
+
+*COMPANY*: CODTECH IT SOLUTIONS
+
+*NAME*: SHIKHA SINGH JAYANTI PRASAD THAKUR
+
+*INTERN ID*: CT04DN874
+
+*DOMAIN*: DATA SCIENCE
+
+*DURATION*: 4 weeks
+
+*MENTOR*: NEELA SANTOSH
+
+
+
 # 📉 Customer Churn Prediction App
 
 This project is an end-to-end **Machine Learning web application** that predicts whether a customer is likely to churn.
@@ -11,23 +27,6 @@ Built with **Flask** for the backend and a styled frontend using **HTML, CSS, an
 - 🤖 ML Model: Trained using Scikit-learn (Logistic Regression or other classifier)
 - 🌐 Web App: Interactive interface with a styled frontend and REST API backend
 - 📊 Visualization: Toast messages, animations, Lottie icons, and dark mode toggle
-
----
-
-## 📁 Project Structure
-
-Churn_Prediction/
-├── model/
-│ └── churn_model.pkl # Trained ML model
-├── static/
-│ ├── style.css # Custom CSS for UI styling
-│ └── script.js # JS for animations and interactivity
-├── templates/
-│ └── index.html # Frontend HTML template
-├── app.py # Flask application logic
-├── requirements.txt # Project dependencies
-└── README.md # Project documentation
-
 
 ---
 
